@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#2a2a6b">
+<title>Sky Hopper</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+  <canvas id="game"></canvas>
+
+  <div class="hud" id="hud" hidden>
+    <span class="chip">Score <b id="score">0</b></span>
+    <span class="chip">Best <b id="best">0</b></span>
+    <span class="chip">Coins <b id="coins">0</b></span>
+    <button class="icon" id="muteBtn" data-act="mute" aria-label="Sound on/off"></button>
+    <button class="icon" data-act="pause" aria-label="Pause">&#10074;&#10074;</button>
+  </div>
+
+  <div class="banner" id="banner"></div>
+  <div class="count" id="count" hidden></div>
+
+  <div class="controls" id="controls" hidden>
+    <div class="pad">
+      <button data-k="left" aria-label="Move left">&#9664;</button>
+      <button data-k="right" aria-label="Move right">&#9654;</button>
+    </div>
+    <button class="jump" data-k="jump" aria-label="Jump">JUMP</button>
+  </div>
+
+  <section class="screen" id="menu">
+    <div class="card">
+      <h1>Sky Hopper</h1>
+      <p>Run, jump and stomp. How far can you get?</p>
+      <div class="row"><button class="btn" data-act="play">Play</button><button class="btn alt" data-act="history">History</button></div>
+      <p class="hint">Hold &#9664; &#9654; to steer, tap JUMP to leap.<br>Stomp enemies, dodge spikes, mind the pits.<br>Keyboard: arrows / A D, Space to jump, P to pause.</p>
+    </div>
+  </section>
+
+  <section class="screen" id="pause" hidden>
+    <div class="card">
+      <h2>Paused</h2>
+      <div class="row"><button class="btn" data-act="resume">Resume</button><button class="btn alt" data-act="restart">Restart</button><button class="btn alt" data-act="menu">Menu</button></div>
+    </div>
+  </section>
+
+  <section class="screen" id="over" hidden>
+    <div class="card">
+      <h2>Game over</h2>
+      <div class="badge" id="newBest" hidden>New best!</div>
+      <div class="row stats"><span class="chip">Score <b id="oScore">0</b></span><span class="chip">Best <b id="oBest">0</b></span></div>
+      <div class="row"><button class="btn" data-act="restart">Restart</button><button class="btn alt" data-act="history">History</button><button class="btn alt" data-act="menu">Menu</button></div>
+    </div>
+  </section>
+
+  <section class="screen" id="history" hidden>
+    <div class="card">
+      <h2>Recent runs</h2>
+      <ul class="hist" id="histList"></ul>
+      <div class="row"><button class="btn" data-act="back">Back</button></div>
+    </div>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

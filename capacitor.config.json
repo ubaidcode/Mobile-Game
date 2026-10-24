@@ -1,0 +1,6 @@
+{
+  "appId": "com.skyhopper.game",
+  "appName": "Sky Hopper",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
